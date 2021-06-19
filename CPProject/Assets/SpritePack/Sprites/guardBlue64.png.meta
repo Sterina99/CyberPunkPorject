@@ -1,7 +1,142 @@
 fileFormatVersion: 2
 guid: e214693547a333445bf6a72dbd88ee3b
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 8913261073853326703
+    second: guardBlue64_0
+  - first:
+      213: -4554929528783735108
+    second: guardBlue64_1
+  - first:
+      213: 3825007225272671521
+    second: guardBlue64_2
+  - first:
+      213: 5641422674246791244
+    second: guardBlue64_3
+  - first:
+      213: 4662547161830993814
+    second: guardBlue64_4
+  - first:
+      213: -5520179367671859474
+    second: guardBlue64_5
+  - first:
+      213: -5345295843498057067
+    second: guardBlue64_6
+  - first:
+      213: 9048436112459534035
+    second: guardBlue64_7
+  - first:
+      213: 3961506550740383518
+    second: guardBlue64_8
+  - first:
+      213: 6661499363497364563
+    second: guardBlue64_9
+  - first:
+      213: -8774939347865706594
+    second: guardBlue64_10
+  - first:
+      213: 2251791547674521765
+    second: guardBlue64_11
+  - first:
+      213: 5739514518566557535
+    second: guardBlue64_12
+  - first:
+      213: -210263036330241318
+    second: guardBlue64_13
+  - first:
+      213: -5069624817844149879
+    second: guardBlue64_14
+  - first:
+      213: 8597458441444744706
+    second: guardBlue64_15
+  - first:
+      213: 8546641795429107085
+    second: guardBlue64_16
+  - first:
+      213: 2096343542102980236
+    second: guardBlue64_17
+  - first:
+      213: 6109074222764173503
+    second: guardBlue64_18
+  - first:
+      213: -7324088622444761426
+    second: guardBlue64_19
+  - first:
+      213: 4237247740307310159
+    second: guardBlue64_20
+  - first:
+      213: -3689589166547421905
+    second: guardBlue64_21
+  - first:
+      213: 4575692420117740303
+    second: guardBlue64_22
+  - first:
+      213: 82802820681027227
+    second: guardBlue64_23
+  - first:
+      213: 4053561951679999713
+    second: guardBlue64_24
+  - first:
+      213: -462082367472000561
+    second: guardBlue64_25
+  - first:
+      213: -9211808691406375094
+    second: guardBlue64_26
+  - first:
+      213: -6083114157061745897
+    second: guardBlue64_27
+  - first:
+      213: 5820342631353954802
+    second: guardBlue64_28
+  - first:
+      213: -459416751309597200
+    second: guardBlue64_29
+  - first:
+      213: -1398005725778583909
+    second: guardBlue64_30
+  - first:
+      213: 1860012013270873667
+    second: guardBlue64_31
+  - first:
+      213: 3071675804318432567
+    second: guardBlue64_32
+  - first:
+      213: -4918016834753707636
+    second: guardBlue64_33
+  - first:
+      213: 5299427566239981259
+    second: guardBlue64_34
+  - first:
+      213: 3981799092149329050
+    second: guardBlue64_35
+  - first:
+      213: -7291837325705602304
+    second: guardBlue64_36
+  - first:
+      213: 8439447423124227884
+    second: guardBlue64_37
+  - first:
+      213: -1801779936761565011
+    second: guardBlue64_38
+  - first:
+      213: -4573318655331420519
+    second: guardBlue64_39
+  - first:
+      213: -3864533015607999738
+    second: guardBlue64_40
+  - first:
+      213: 2617970051728797482
+    second: guardBlue64_41
+  - first:
+      213: -4273595010990548298
+    second: guardBlue64_42
+  - first:
+      213: 8965858790385763176
+    second: guardBlue64_43
+  - first:
+      213: 2466262872589111504
+    second: guardBlue64_44
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,12 +176,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 30
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,9 +210,990 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: guardBlue64_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 641
+        width: 42
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f652851e8b342bb70800000000000000
+      internalID: 8913261073853326703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_1
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 642
+        width: 44
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb678e30ab3a9c0c0800000000000000
+      internalID: -4554929528783735108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_2
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 642
+        width: 43
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12d1ead3ec7251530800000000000000
+      internalID: 3825007225272671521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_3
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 641
+        width: 43
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c40705e580c5a4e40800000000000000
+      internalID: 5641422674246791244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_4
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 577
+        width: 43
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69f2171c0f1b4b040800000000000000
+      internalID: 4662547161830993814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_5
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 578
+        width: 43
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee67a7dbc126463b0800000000000000
+      internalID: -5520179367671859474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_6
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 578
+        width: 44
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5922dec30c1b1d5b0800000000000000
+      internalID: -5345295843498057067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_7
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 577
+        width: 42
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3de87ff14b0829d70800000000000000
+      internalID: 9048436112459534035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_8
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 521
+        width: 50
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e17734c08391af630800000000000000
+      internalID: 3961506550740383518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_9
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 524
+        width: 51
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35c40c08066627c50800000000000000
+      internalID: 6661499363497364563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_10
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 520
+        width: 51
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9fdddc9727293680800000000000000
+      internalID: -8774939347865706594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_11
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 524
+        width: 50
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a0fd5b6b78ff3f10800000000000000
+      internalID: 2251791547674521765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_12
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 455
+        width: 51
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f575b5e9b0ad6af40800000000000000
+      internalID: 5739514518566557535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_13
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 460
+        width: 51
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad2142ae1eef41df0800000000000000
+      internalID: -210263036330241318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_14
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 456
+        width: 50
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98125e3961315a9b0800000000000000
+      internalID: -5069624817844149879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_15
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 460
+        width: 51
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20e5f75b6ee405770800000000000000
+      internalID: 8597458441444744706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_16
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 380
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d850f0f4e65cb9670800000000000000
+      internalID: 8546641795429107085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_17
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 382
+        width: 51
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c867b3a3855b71d10800000000000000
+      internalID: 2096343542102980236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_18
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 382
+        width: 48
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb8aa5a63aac7c450800000000000000
+      internalID: 6109074222764173503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_19
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 381
+        width: 52
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eae23bbd33c9b5a90800000000000000
+      internalID: -7324088622444761426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_20
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 320
+        width: 52
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f460852be5abdca30800000000000000
+      internalID: 4237247740307310159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_21
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 320
+        width: 48
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f25bfc88332fbccc0800000000000000
+      internalID: -3689589166547421905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_22
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 320
+        width: 51
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0bb0965300208f30800000000000000
+      internalID: 4575692420117740303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_23
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 320
+        width: 48
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9ec7190abc262100800000000000000
+      internalID: 82802820681027227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_24
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 257
+        width: 52
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eeecec4e15214830800000000000000
+      internalID: 4053561951679999713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_25
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 257
+        width: 55
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc12cd5f88a5699f0800000000000000
+      internalID: -462082367472000561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_26
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 280
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a47fdd92dc4192080800000000000000
+      internalID: -9211808691406375094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_27
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 257
+        width: 55
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7135f2467ef649ba0800000000000000
+      internalID: -6083114157061745897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_28
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 257
+        width: 55
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f13ae429c206c050800000000000000
+      internalID: 5820342631353954802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_29
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 180
+        width: 44
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f5d35616e2df99f0800000000000000
+      internalID: -459416751309597200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_30
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 198
+        width: 45
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9e51090339499ce0800000000000000
+      internalID: -1398005725778583909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_31
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 198
+        width: 45
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34638f0421710d910800000000000000
+      internalID: 1860012013270873667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_32
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 199
+        width: 43
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73dff8d9ed8c0aa20800000000000000
+      internalID: 3071675804318432567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_33
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 130
+        width: 62
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c814d1ddeb1bfbbb0800000000000000
+      internalID: -4918016834753707636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_34
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 130
+        width: 62
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bce95ae3b495b8940800000000000000
+      internalID: 5299427566239981259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_35
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 130
+        width: 62
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9c98868d21324730800000000000000
+      internalID: 3981799092149329050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_36
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 130
+        width: 62
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00b126906903eca90800000000000000
+      internalID: -7291837325705602304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_37
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 65
+        width: 52
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c27c7eb97b0fe1570800000000000000
+      internalID: 8439447423124227884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_38
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 65
+        width: 56
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da0b6e991bacef6e0800000000000000
+      internalID: -1801779936761565011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_39
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 64
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 996bd48d9ee4880c0800000000000000
+      internalID: -4573318655331420519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_40
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 65
+        width: 58
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6038aed82bb6e5ac0800000000000000
+      internalID: -3864533015607999738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_41
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 58
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2fe7e534e5e45420800000000000000
+      internalID: 2617970051728797482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_42
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 0
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bad600eaf321b4c0800000000000000
+      internalID: -4273595010990548298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_43
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1
+        width: 56
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 863c14311112d6c70800000000000000
+      internalID: 8965858790385763176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guardBlue64_44
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 1
+        width: 52
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d0986b040de93220800000000000000
+      internalID: 2466262872589111504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
