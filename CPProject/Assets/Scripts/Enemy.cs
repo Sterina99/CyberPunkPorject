@@ -37,11 +37,12 @@ public class Enemy : MovingObject
         {
             dirY = target.position.y > transform.position.y ? 1 : -1;
             Debug.Log(dirY);
-
+            
         }
         else
         {
             dirX = target.position.x > transform.position.x ? 1 : -1;
+            transform.rotation = Quaternion.AngleAxis(180 * ((dirX - 1) / 2), Vector3.up);
         }
         
         if(gameObject.name== "Guard(Clone)")

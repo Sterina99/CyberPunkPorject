@@ -8,6 +8,8 @@ TagManager:
   - Exit
   - Chip
   - Wall
+  - Floor
+  - Trampoline
   layers:
   - Default
   - TransparentFX

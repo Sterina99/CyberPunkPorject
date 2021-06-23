@@ -26,14 +26,18 @@ public class BoardManager : MonoBehaviour
     public GameObject[] floorTiles;
     public GameObject[] chipTiles;
     public GameObject[] enemyTiles;
+    public GameObject[] enemyRobotTiles;
     public GameObject[] outerWallTiles;
     public GameObject[] wallTiles;
     public GameObject cornerWallTiles;
+    [SerializeField] GameObject trampolinePrefab;
 
     private Transform boardHolder;
 
     private List<Vector3> gridPositions = new List<Vector3>();
 
+
+    private int platsNumber=20;
     void InitialiseList()
     {
         gridPositions.Clear();
@@ -71,6 +75,82 @@ public class BoardManager : MonoBehaviour
         }
     }
 
+   public void PlatformSetup()
+    {
+        float posX = 0.7f;
+        float posY = -1;
+        float incX = 0.7f;
+        float incY = -1;
+        GameObject instance=null;
+        GameObject prevInstance=null;
+        for (int i = 0; i < platsNumber; i++)
+        {
+            
+            GameObject toInstatiate = outerWallTiles[Random.Range(0, outerWallTiles.Length)];
+            for (int j = 1; j < 3; j++)
+            {
+
+                if (toInstatiate.name == "Wall3" || toInstatiate.name == "Wall4" || toInstatiate.name == "Wall5")
+                {
+                    if (prevInstance != null) { 
+                    if(prevInstance.name == "Wall3")
+                    {
+                        incY = 1.5f;
+                    }else if (prevInstance.name == "Wall4")
+                    {
+                        incY = 2f;
+
+                    }else if (prevInstance.name == "Wall5")
+                    {
+                        incY = 2.5f;
+                    }
+                    }
+                Instantiate(trampolinePrefab, new Vector3(posX, posY + incY, 0f), Quaternion.identity);
+                }
+                    
+
+                incY = Random.Range(1, 2) / 2f;
+               
+                incX = Random.Range(1, 3) / 2f;
+               
+                if (prevInstance != null) { 
+                if (prevInstance.name == "Wall3")
+                {
+                    incY = 1.5f;
+                }
+                else if (prevInstance.name == "Wall4")
+                {
+                    incY = 2f;
+
+                }
+                else if (prevInstance.name == "Wall5")
+                {
+                    incY = 2.5f;
+                }else if (prevInstance.name == "Floor3")
+                {
+                    incX = 1.5f;
+                }
+                else if (prevInstance.name == "Floor4")
+                {
+                    incX = 2f;
+
+                }
+                else if (prevInstance.name == "Floor5")
+                {
+                    incX = 2.5f;
+                }
+                }
+                posY += incY;
+                posX += incX;
+                prevInstance = instance;
+                instance = Instantiate(toInstatiate, new Vector3(posX, posY, 0f), Quaternion.identity);
+
+               
+            }
+            
+        }
+    }
+
     Vector3 RandomPosition()
     {
         int randomIndex = Random.Range(0, gridPositions.Count);
@@ -99,7 +179,10 @@ public class BoardManager : MonoBehaviour
      //   if (chipTiles != null || chipTiles.Length>0)
     //    LayOutObjectAtRandom(chipTiles, chipCount.min, chipCount.max);
         int enemyCount = (int)Mathf.Log(level, 2f);
+      //  if(GameManager.instance.chipInstalled>= 10)
         LayOutObjectAtRandom(enemyTiles, enemyCount, enemyCount);
+        //else
+      //  LayOutObjectAtRandom(enemyRobotTiles, enemyCount, enemyCount);
         Instantiate(exit, new Vector3(columns - 1, rows - 1, 0f), Quaternion.identity);
     }
     // Start is called before the first frame update

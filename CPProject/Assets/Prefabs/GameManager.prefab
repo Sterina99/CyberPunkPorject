@@ -77,8 +77,15 @@ MonoBehaviour:
   - {fileID: 6173490463051397104, guid: 6b05c9ea7ac9eb8419de461068a7fb1a, type: 3}
   - {fileID: 4887922464288029540, guid: 0aafe494521e1e44b97bbdce763343ee, type: 3}
   - {fileID: 1134719963208761877, guid: c0219c0daaaf8064ea65488cc2fc2316, type: 3}
+  enemyRobotTiles: []
   outerWallTiles:
   - {fileID: 8820255148857558794, guid: 19b9489caeb31b84386b8abf92f95ed6, type: 3}
+  - {fileID: 5007083385018215204, guid: 8c06371df91843c49be55bcdd600fa99, type: 3}
+  - {fileID: 5530377952604333034, guid: 00b0ddc55b5837949b29e006f559104c, type: 3}
+  - {fileID: 6349474124676953993, guid: aa37205d930a4614fb16ae41dfe8d0ec, type: 3}
+  - {fileID: 6773736548911852206, guid: ff54b708f8571d145843e0c01c80a759, type: 3}
+  - {fileID: 8275683612625910883, guid: 959b9feab88782546b78dc5bcffdf41d, type: 3}
   wallTiles:
   - {fileID: 5858488759489049912, guid: de1c1d2ce0cbb4143912c68384ec0d5b, type: 3}
   cornerWallTiles: {fileID: 8820255148857558794, guid: 19b9489caeb31b84386b8abf92f95ed6, type: 3}
+  trampolinePrefab: {fileID: 8422236768768778674, guid: 96f2d310f7e8fd44db151b153c667234, type: 3}

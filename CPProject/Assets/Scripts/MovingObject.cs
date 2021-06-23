@@ -10,7 +10,7 @@ public abstract class MovingObject : MonoBehaviour
 
 
     public BoxCollider2D boxCollider;
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     private float inverseMoveTime;
 
     // Start is called before the first frame update

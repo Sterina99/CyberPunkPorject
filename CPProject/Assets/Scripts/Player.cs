@@ -2,27 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MovingObject
+public class Player : MonoBehaviour
 {
-    public int wallDamage = 1;
-    public int enemyDamage = 20;
     public int pointPerChip = 10;
     public int numberOfChips = 0;
+    public LayerMask blockingLayer;
+    public LayerMask floorLayer;
     public float restartLevelDelay = 1f;
+
+    private float moveSpeed;
     float horizontal = 0;
     float vertical = 0;
-    Transform attackPos;
-    [SerializeField] float attackRange = 1f;
+    [SerializeField] float jumpForce;
+    [SerializeField] Transform groundCheck;
+   public  bool isGrounded;
+
+    [SerializeField] Transform attackPos;
+    [SerializeField] float attackRange = .5f;
     private int hp = 20;
+    public int wallDamage = 1;
+    public int enemyDamage = 20;
+
     private Animator anim;
+    public BoxCollider2D boxCollider;
+    public Rigidbody2D rb;
     // Start is called before the first frame update
-    protected override void Start()
+     void Start()
     {
         anim = GetComponent<Animator>();
 
         numberOfChips = GameManager.instance.chipInstalled;
-        base.Start();
+    
         attackPos = GetComponentInChildren<Transform>();
+        moveSpeed = 20f;
+        jumpForce = 5f;
     }
 
 
@@ -30,27 +43,63 @@ public class Player : MovingObject
     {
         GameManager.instance.chipInstalled = numberOfChips;
     }
-    // Update is called once per frame
-    void Update()
+    private void LateUpdate()
     {
-        
+      
+    }
+    // Update is called once per frame
+    void FixedUpdate()
+    {
 
         horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
-        if (horizontal != 0)
-            vertical = 0;
-        if (horizontal != 0 || vertical != 0)
-        {
-            horizontal *= 1.8f;
-            vertical *= 1.8f;
 
-            //          transform.rotation = Quaternion.LookRotation(new Vector3(horizontal*2, 0,0));
-            if(horizontal<0)
-            transform.rotation = Quaternion.AngleAxis(180*(int)horizontal,Vector3.up);         
-      //      Debug.Log((int)horizontal);
-        //    Debug.Log((int)vertical);
-            AttemptMove<Wall>((int)horizontal, (int)vertical);
+
+        if (Physics2D.Linecast(transform.position, groundCheck.position, 1<< LayerMask.NameToLayer("BlockingLayer")))
+        {
+            anim.SetBool("isGrounded", true);
+            isGrounded = true;
+        }else
+        {
+            anim.SetBool("isGrounded", false);
+           
+            isGrounded = false;
         }
+            
+
+
+
+
+        if (horizontal != 0 )
+        {
+            horizontal *= 2f;
+            if(isGrounded)
+            anim.SetBool("isRunning", true);
+            //          transform.rotation = Quaternion.LookRotation(new Vector3(horizontal*2, 0,0));
+            if (horizontal < -0.1f)
+                transform.rotation = Quaternion.AngleAxis(180, Vector3.up);
+            else
+            {
+                transform.rotation = Quaternion.AngleAxis(0, Vector3.up);
+            }
+
+
+            rb.velocity = new Vector2(horizontal, rb.velocity.y);
+            //    Debug.Log((int)vertical);
+            //  moveSpeed *= Time.deltaTime;        
+        }
+        else
+        {
+            anim.SetBool("isRunning", false);
+        }
+         
+        if (Input.GetKey(KeyCode.Space) && isGrounded)
+        {
+            Debug.Log("Jump");
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            anim.Play("Jump");
+       
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             anim.SetTrigger("mcAttack");
@@ -67,19 +116,8 @@ public class Player : MovingObject
     {
         hp -= damage;
     }
-    protected override void OnCantMove<T>(T component)
-    {
-      /*  Wall hitWall = component as Wall;
-        hitWall.DamageWall(wallDamage);
-        anim.SetTrigger("mcAttack"); */
-    }
-    protected override void AttemptMove<T>(int dirX, int dirY)
-    {
-        base.AttemptMove<T>(dirX, dirY);
-        RaycastHit2D hit;
-
-        
-    }
+ 
+    
     private void Restart()
     {
         Application.LoadLevel(Application.loadedLevel);
@@ -97,8 +135,25 @@ public class Player : MovingObject
             numberOfChips++;
             collision.gameObject.SetActive(false);
         }
-    }
+        else if (collision.tag == "Trampoline")
+        {
+            jumpForce = 8f;
+            
+        }
 
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Trampoline")
+        {
+            jumpForce =5f;
+
+        }
+    }
+    //   private void OnCollisionEnter2D(Collision2D collision)
+    //  {
+    //      if (collision.gameObject.tag == "Floor") anim.SetBool("isGrounded", true);
+    // }
     public void EnableCombo()
     {
        
@@ -128,5 +183,9 @@ public class Player : MovingObject
             }
            
         }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(attackPos.position, attackRange);
     }
 }
