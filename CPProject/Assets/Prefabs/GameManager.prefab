@@ -76,8 +76,8 @@ MonoBehaviour:
   enemyTiles:
   - {fileID: 6173490463051397104, guid: 6b05c9ea7ac9eb8419de461068a7fb1a, type: 3}
   - {fileID: 4887922464288029540, guid: 0aafe494521e1e44b97bbdce763343ee, type: 3}
+  enemyRobotTiles:
   - {fileID: 1134719963208761877, guid: c0219c0daaaf8064ea65488cc2fc2316, type: 3}
-  enemyRobotTiles: []
   outerWallTiles:
   - {fileID: 8820255148857558794, guid: 19b9489caeb31b84386b8abf92f95ed6, type: 3}
   - {fileID: 5007083385018215204, guid: 8c06371df91843c49be55bcdd600fa99, type: 3}

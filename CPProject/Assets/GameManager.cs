@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this);
         boardScript = GetComponent<BoardManager>();
         enemies = new List<Enemy>();
-        boardScript.PlatformSetup();
+        boardScript.PlatformSetup(level,chipInstalled);
       //  InitGame();
     }
     void InitGame()

@@ -75,33 +75,46 @@ public class BoardManager : MonoBehaviour
         }
     }
 
-   public void PlatformSetup()
+   public void PlatformSetup(int level,int chipsNumber)
     {
+        int min=0, max=100;
         float posX = 0.7f;
         float posY = -1;
         float incX = 0.7f;
         float incY = -1;
+        bool canHoldEnemy = false;
         GameObject instance=null;
         GameObject prevInstance=null;
+        GameObject toInstatiate = null;
         for (int i = 0; i < platsNumber; i++)
         {
-            
-            GameObject toInstatiate = outerWallTiles[Random.Range(0, outerWallTiles.Length)];
+            canHoldEnemy = false;
+            if (level < 0)
+            {
+                toInstatiate = outerWallTiles[Random.Range(0, outerWallTiles.Length)];
+                level--;
+            }
+            else
+            {
+                toInstatiate = wallTiles[Random.Range(0, wallTiles.Length)];
+            }
+           
             for (int j = 1; j < 3; j++)
             {
 
                 if (toInstatiate.name == "Wall3" || toInstatiate.name == "Wall4" || toInstatiate.name == "Wall5")
                 {
-                    if (prevInstance != null) { 
-                    if(prevInstance.name == "Wall3")
-                    {
+                    if (prevInstance != null) {
+                        incY = 0;
+                    if (prevInstance.name.Contains("Wall3"))
+                        {
                         incY = 1.5f;
-                    }else if (prevInstance.name == "Wall4")
-                    {
+                    }else if (prevInstance.name.Contains("Wall4"))
+                        {
                         incY = 2f;
 
-                    }else if (prevInstance.name == "Wall5")
-                    {
+                    }else if (prevInstance.name.Contains("Wall5"))
+                        {
                         incY = 2.5f;
                     }
                     }
@@ -114,35 +127,52 @@ public class BoardManager : MonoBehaviour
                 incX = Random.Range(1, 3) / 2f;
                
                 if (prevInstance != null) { 
-                if (prevInstance.name == "Wall3")
+                if (prevInstance.name.Contains("Wall3"))
                 {
                     incY = 1.5f;
                 }
-                else if (prevInstance.name == "Wall4")
-                {
+                else if (prevInstance.name.Contains("Wall4"))
+                    {
                     incY = 2f;
 
                 }
-                else if (prevInstance.name == "Wall5")
-                {
+                else if (prevInstance.name.Contains("Wall5"))
+                    {
                     incY = 2.5f;
-                }else if (prevInstance.name == "Floor3")
-                {
+                }else if (prevInstance.name.Contains("Floor3"))
+                    {
                     incX = 1.5f;
+                        canHoldEnemy = true;
+                        Debug.Log(canHoldEnemy);
+                      
                 }
-                else if (prevInstance.name == "Floor4")
-                {
+                else if (prevInstance.name.Contains("Floor4"))
+                    {
                     incX = 2f;
+                        canHoldEnemy = true;
+                        Debug.Log(canHoldEnemy);
 
-                }
-                else if (prevInstance.name == "Floor5")
-                {
+                    }
+                else if (prevInstance.name.Contains("Floor5"))
+                    {
                     incX = 2.5f;
-                }
+                        canHoldEnemy = true;
+                        Debug.Log(canHoldEnemy);
+                    }
+                   
                 }
                 posY += incY;
                 posX += incX;
                 prevInstance = instance;
+                if (canHoldEnemy)
+                {
+                    Debug.Log("SpawnEnemy");
+                    if(Random.Range(min,max)>50+chipsNumber*2)//U are more robot than human, so you fight robot
+                    Instantiate(enemyRobotTiles[Random.Range(0, enemyRobotTiles.Length)], new Vector3(posX, posY+0.5f, 0f), Quaternion.identity);
+                    else
+                    Instantiate(enemyTiles[Random.Range(0, enemyTiles.Length)], new Vector3(posX, posY+0.5f, 0f), Quaternion.identity);
+
+                }
                 instance = Instantiate(toInstatiate, new Vector3(posX, posY, 0f), Quaternion.identity);
 
                

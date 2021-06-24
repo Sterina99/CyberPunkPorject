@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
 
         numberOfChips = GameManager.instance.chipInstalled;
     
-        attackPos = GetComponentInChildren<Transform>();
+       
         moveSpeed = 20f;
         jumpForce = 5f;
     }
@@ -100,7 +100,7 @@ public class Player : MonoBehaviour
        
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             anim.SetTrigger("mcAttack");
             
@@ -176,7 +176,7 @@ public class Player : MonoBehaviour
         {
             if (obj.tag == "Enemy")
             {
-                obj.GetComponent<Enemy>().GetDamage(enemyDamage);
+                obj.GetComponent<EnemyController>().GetDamage(enemyDamage);
             }if (obj.tag == "Wall")
             {
                 obj.GetComponent<Wall>().DamageWall(wallDamage);
