@@ -23,6 +23,7 @@ public class BoardManager : MonoBehaviour
     public Count chipCount = new Count(0, 2);
 
     public GameObject exit;
+    public GameObject boss;
     public GameObject[] floorTiles;
     public GameObject[] chipTiles;
     public GameObject[] enemyTiles;
@@ -32,12 +33,10 @@ public class BoardManager : MonoBehaviour
     public GameObject cornerWallTiles;
     [SerializeField] GameObject trampolinePrefab;
 
-    private Transform boardHolder;
+    [SerializeField] GameObject platHolder;
 
     private List<Vector3> gridPositions = new List<Vector3>();
 
-
-    private int platsNumber=20;
     void InitialiseList()
     {
         gridPositions.Clear();
@@ -54,14 +53,14 @@ public class BoardManager : MonoBehaviour
 
     void BoardSetUp()
     {
-        boardHolder = new GameObject("Board").transform;
-        bool isCorner = false;
-        int cornerRot = 0;
+      //  boardHolder = new GameObject("Board").transform;
+   //     bool isCorner = false;
+      //  int cornerRot = 0;
         for (int i = -1; i < columns + 1; i++)
         {
             for (int j = -1; j < rows + 1; j++)
             {
-                isCorner = false;
+              //  isCorner = false;
                 GameObject toInstatiate = floorTiles[Random.Range(0, floorTiles.Length)];
                 if (i == -1 || i == columns || j == -1 || j == rows)
                 {
@@ -69,116 +68,164 @@ public class BoardManager : MonoBehaviour
                         toInstatiate = outerWallTiles[Random.Range(0, outerWallTiles.Length)];
                 }
                 GameObject instance = Instantiate(toInstatiate, new Vector3(i, j, 0f), Quaternion.identity);
-                instance.transform.SetParent(boardHolder);
+          //      instance.transform.SetParent(boardHolder);
                
             }
         }
     }
 
-   public void PlatformSetup(int level,int chipsNumber)
+    public void PlatformSetup(int level, int chipsNumber)
     {
-        int min=0, max=100;
-        float posX = 0.7f;
-        float posY = -1;
-        float incX = 0.7f;
+        
+        int min = 0, max = 100;
+        int platNumber = 0;
+        float posX = GameObject.Find("GroundCheck").GetComponent<Transform>().position.x;
+        float posY = GameObject.Find("GroundCheck").GetComponent<Transform>().position.y;
+        GameManager.instance.doingSetup = true;
+        float incX = 0;
         float incY = -1;
         bool canHoldEnemy = false;
-        GameObject instance=null;
-        GameObject prevInstance=null;
-        GameObject toInstatiate = null;
-        for (int i = 0; i < platsNumber; i++)
+        GameObject instance = null;
+        GameObject prevInstance = null;
+        GameObject toInstatiateFirst = null;
+        GameObject toInstatiateSecond = null;
+        Debug.Log(level);
+
+       if (level > 1)
+                CleanLevel();
+            
+        
+            platHolder = new GameObject("PlatHolder");
+        for (int i = 0; i <= 12 + level * 2;i++)
         {
+            
             canHoldEnemy = false;
-            if (level < 0)
-            {
-                toInstatiate = outerWallTiles[Random.Range(0, outerWallTiles.Length)];
-                level--;
-            }
-            else
-            {
-                toInstatiate = wallTiles[Random.Range(0, wallTiles.Length)];
-            }
+            //Walls
+            toInstatiateFirst = outerWallTiles[Random.Range(0, outerWallTiles.Length)];
            
-            for (int j = 1; j < 3; j++)
+            //Floors
+            toInstatiateSecond = wallTiles[Random.Range(0, wallTiles.Length)];
+            if (i != 0)
             {
+                //    if (level < 0)
+                //     {
+                //        level--;
+                //    }
+                //  else
+                //  {
+                //toInstatiate = wallTiles[Random.Range(0, wallTiles.Length)];
+                //    }
 
-                if (toInstatiate.name == "Wall3" || toInstatiate.name == "Wall4" || toInstatiate.name == "Wall5")
-                {
-                    if (prevInstance != null) {
-                        incY = 0;
-                    if (prevInstance.name.Contains("Wall3"))
-                        {
-                        incY = 1.5f;
-                    }else if (prevInstance.name.Contains("Wall4"))
-                        {
-                        incY = 2f;
-
-                    }else if (prevInstance.name.Contains("Wall5"))
-                        {
-                        incY = 2.5f;
-                    }
-                    }
-                Instantiate(trampolinePrefab, new Vector3(posX, posY + incY, 0f), Quaternion.identity);
-                }
-                    
 
                 incY = Random.Range(1, 2) / 2f;
-               
-                incX = Random.Range(1, 3) / 2f;
-               
-                if (prevInstance != null) { 
+
+            incX = Random.Range(1, 3) / 2f;
+            
+          
+
+            if (prevInstance != null) {
                 if (prevInstance.name.Contains("Wall3"))
                 {
                     incY = 1.5f;
+               //     Instantiate(trampolinePrefab, new Vector3(posX, posY + incY, 0f), Quaternion.identity);
                 }
                 else if (prevInstance.name.Contains("Wall4"))
-                    {
+                {
                     incY = 2f;
-
+              //      Instantiate(trampolinePrefab, new Vector3(posX, posY + incY, 0f), Quaternion.identity);
                 }
                 else if (prevInstance.name.Contains("Wall5"))
-                    {
+                {
                     incY = 2.5f;
-                }else if (prevInstance.name.Contains("Floor3"))
-                    {
+              //      Instantiate(trampolinePrefab, new Vector3(posX, posY + incY, 0f), Quaternion.identity);
+                }
+                else if (prevInstance.name.Contains("Floor3"))
+                {
                     incX = 1.5f;
-                        canHoldEnemy = true;
-                        Debug.Log(canHoldEnemy);
-                      
+                    
+               
+
                 }
                 else if (prevInstance.name.Contains("Floor4"))
-                    {
+                {
                     incX = 2f;
-                        canHoldEnemy = true;
-                        Debug.Log(canHoldEnemy);
+                    
+                 
 
-                    }
-                else if (prevInstance.name.Contains("Floor5"))
-                    {
-                    incX = 2.5f;
-                        canHoldEnemy = true;
-                        Debug.Log(canHoldEnemy);
-                    }
-                   
                 }
+                else if (prevInstance.name.Contains("Floor5")) { 
+                incX = 2.5f;
+                    
+                }
+            
+          
+           
+            }
+       
                 posY += incY;
                 posX += incX;
-                prevInstance = instance;
-                if (canHoldEnemy)
+                //end of the level
+            if (i == 12 + level * 2 )
                 {
-                    Debug.Log("SpawnEnemy");
-                    if(Random.Range(min,max)>50+chipsNumber*2)//U are more robot than human, so you fight robot
-                    Instantiate(enemyRobotTiles[Random.Range(0, enemyRobotTiles.Length)], new Vector3(posX, posY+0.5f, 0f), Quaternion.identity);
-                    else
-                    Instantiate(enemyTiles[Random.Range(0, enemyTiles.Length)], new Vector3(posX, posY+0.5f, 0f), Quaternion.identity);
+                        instance = Instantiate(wallTiles[wallTiles.Length-1], new Vector3(posX, posY, 0f), Quaternion.identity);
+                    instance.transform.SetParent(platHolder.transform);
 
+                    if (level == 3)
+                    {
+                        GameManager.instance.enemies.Add( Instantiate(boss, new Vector3(posX, posY + 0.5f, 0f), Quaternion.identity));
+                    }
+                   instance= Instantiate(exit, new Vector3(posX+1.8f, posY+0.75f, 0f), Quaternion.identity);
+                    instance.transform.SetParent(platHolder.transform);
+                }               
+            //middle fo the level
+                 else if (Random.Range(0, 10) >= 2 && platNumber < level)
+                  {
+                 //   Debug.Log(platNumber);
+                //    Debug.Log(level);
+                        platNumber++;
+                        instance = Instantiate(toInstatiateSecond, new Vector3(posX, posY, 0f), Quaternion.identity);
+                    instance.transform.SetParent(platHolder.transform);
+
+                    prevInstance = instance;
+                    
+                        if (Random.Range(min, max) > 50 + chipsNumber * 2)//U are more robot than human, so you fight robot
+                            GameManager.instance.enemies.Add(Instantiate(enemyRobotTiles[Random.Range(0, enemyRobotTiles.Length)], new Vector3(posX, posY + 0.5f, 0f), Quaternion.identity));
+                        else
+                            GameManager.instance.enemies.Add(Instantiate(enemyTiles[Random.Range(0, enemyTiles.Length)], new Vector3(posX, posY + 0.5f, 0f), Quaternion.identity));      
+                 }
+                else
+                {   
+                   instance= Instantiate(trampolinePrefab, new Vector3(posX-0.5f, posY, 0f), Quaternion.identity);
+                    instance.transform.SetParent(platHolder.transform);
+                    instance = Instantiate(toInstatiateFirst, new Vector3(posX, posY, 0f), Quaternion.identity);
+                    instance.transform.SetParent(platHolder.transform);
+
+                    prevInstance = instance;
+                     
                 }
-                instance = Instantiate(toInstatiate, new Vector3(posX, posY, 0f), Quaternion.identity);
-
-               
             }
-            
+            else
+            {
+                instance = Instantiate(toInstatiateSecond, new Vector3(posX, posY, 0f), Quaternion.identity);
+                instance.transform.SetParent(platHolder.transform);
+                prevInstance = instance;
+                
+            }
         }
+     //   Debug.Log(GameManager.instance.enemies[GameManager.instance.enemies.Count - 1]);
+        GameManager.instance.enemies[GameManager.instance.enemies.Count-1].GetComponent<EnemyController>().AssignChip();
+        
+    }
+
+    private void CleanLevel()
+    {
+       foreach(GameObject enemy in GameManager.instance.enemies)
+        {
+            Destroy(enemy);
+        }
+
+        Destroy(platHolder.gameObject);
+    
     }
 
     Vector3 RandomPosition()
@@ -216,9 +263,10 @@ public class BoardManager : MonoBehaviour
         Instantiate(exit, new Vector3(columns - 1, rows - 1, 0f), Quaternion.identity);
     }
     // Start is called before the first frame update
-    void Start()
+    void Update()
     {
-        
+        if(platHolder==null)
+       platHolder = GameObject.Find("PlatHolder");  
     }
 
 }

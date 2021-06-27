@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 610663860172277673}
   - component: {fileID: 7505918155449708603}
   - component: {fileID: 2025922178849216729}
-  - component: {fileID: -5361500158705655460}
-  m_Layer: 6
+  - component: {fileID: 1313465981}
+  m_Layer: 8
   m_Name: Biker
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -31,7 +31,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.78324544, y: -0.6249939, z: -1.5362653}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1661958278786291190}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -50,12 +51,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 200
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &610663860172277673
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -73,8 +74,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5714286, y: 0.9714286}
-    newSize: {x: 0.19, y: 0.34}
+    oldSize: {x: 1.0285715, y: 0.8857143}
+    newSize: {x: 0.5714286, y: 0.9142857}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -127,7 +128,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.19, y: 0.34}
+  m_Size: {x: 0.5714286, y: 0.9142857}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -152,7 +153,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-5361500158705655460
+--- !u!114 &1313465981
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,14 +162,48 @@ MonoBehaviour:
   m_GameObject: {fileID: 4887922464288029540}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3284e48fc4987594b9e5f7ded6cc27d7, type: 3}
+  m_Script: {fileID: 11500000, guid: 616ac8acbc396494ea1fe30976e89f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveTime: 0.1
+  target: {fileID: 0}
+  attackPos: {fileID: 1661958278786291190}
+  distance: 0
+  height: 0
+  speed: 0.4
+  hp: 0
+  damage: 0
   blockingLayer:
     serializedVersion: 2
     m_Bits: 64
-  boxCollider: {fileID: 0}
-  rb: {fileID: 0}
-  playerDamage: 0
-  hp: 20
+  hasChip: 0
+  chipPrefab: {fileID: 2426098135216271186, guid: f00e467e015dcf34abb28e8e560e66d0, type: 3}
+--- !u!1 &8176177081651791882
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1661958278786291190}
+  m_Layer: 6
+  m_Name: AttackPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1661958278786291190
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8176177081651791882}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.241, y: 0.059, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5102951393575226939}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

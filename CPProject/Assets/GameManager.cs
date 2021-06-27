@@ -8,9 +8,13 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
     public int chipInstalled = 0;
 
-    private List<Enemy> enemies;
+   
+    [SerializeField] Player player;
+    public List<GameObject> enemies;
     private GameObject levelImage;
-    private bool doingSetup;
+    [SerializeField] GameObject mainMenu;
+    public bool doingSetup=true;
+    
 
     public static GameManager Instance()
     {
@@ -18,7 +22,7 @@ public class GameManager : MonoBehaviour
     }
     public BoardManager boardScript;
 
-    private int level = 3;
+    [SerializeField] int level = 1;
 
     private void Awake()
     {
@@ -28,26 +32,64 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this);
         }
+    //    level = 1;
         DontDestroyOnLoad(this);
-        boardScript = GetComponent<BoardManager>();
-        enemies = new List<Enemy>();
-        boardScript.PlatformSetup(level,chipInstalled);
+        
+        
+       
+       
       //  InitGame();
     }
-    void InitGame()
+    public void InitGame()
     {
+        Debug.Log(level);
+
+        mainMenu = GameObject.Find("MainMenu");
+        if (mainMenu != null)
+        {
+            mainMenu.gameObject.SetActive(false);
+        }
+     
+        foreach(GameObject enemy in enemies)
+        {
+            Destroy(enemy);
+        }
+     //   if (boardScript == null)
+       //     boardScript = GameObject.Find("PlatHolder").GetComponent<BoardManager>();
         enemies.Clear();
-        boardScript.SetUpScene(level);
+        if (player == null) player = GameObject.Find("Player").GetComponent<Player>();
+        player.gameObject.SetActive(true);
+        player.transform.position = Vector3.zero;
+        boardScript.PlatformSetup(level, chipInstalled);
+        level += 1;
+        Debug.Log(level);
+        //    boardScript.SetUpScene(level);
     }
     // Start is called before the first frame update
    public void GameOver()
     {
-        enabled = false;
+       // enabled = false;
+      //  level = 1;
+        chipInstalled = 0;
+        mainMenu.gameObject.SetActive(true);
     }
-
-    private void OnLevelWasLoaded(int index)
+    public void ExitGame()
     {
-        level++;
-        InitGame();
+        Application.Quit();
+    }
+    public void StartGame()
+    {
+        level = 1;
+        NextLevel();
+    }
+    public void NextLevel()
+    {    
+        if(level<=3)
+            InitGame();
+        else
+        {
+            ExitGame();
+            Debug.Log("Done");
+        }
     }
 }
